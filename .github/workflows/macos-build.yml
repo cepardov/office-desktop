@@ -68,3 +68,14 @@ jobs:
           cd ${{ github.workspace }}/${{ env.CRAFT_TARGET }}/build/nextcloud-client/work/build
           ctest --output-on-failure --output-junit testResult.xml
 
+      - name: Upload to GitHub Releases
+        uses: softprops/action-gh-release@v2
+        run: |
+          ls ${{ github.workspace }}/${{ env.CRAFT_TARGET }}/build/nextcloud-client/work/build/
+        with:
+          files: |
+            ${{ github.workspace }}/${{ env.CRAFT_TARGET }}/build/nextcloud-client/work/build/*.dmg
+            ${{ github.workspace }}/${{ env.CRAFT_TARGET }}/build/nextcloud-client/work/build/*.app
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
