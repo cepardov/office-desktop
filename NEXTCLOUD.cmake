@@ -6,9 +6,9 @@ if(NEXTCLOUD_DEV)
     set( APPLICATION_EXECUTABLE "nextclouddev" )
     set( APPLICATION_ICON_NAME  "Nextcloud" )
 else()
-    set( APPLICATION_NAME       "Nextcloud" )
-    set( APPLICATION_SHORTNAME  "Nextcloud" )
-    set( APPLICATION_EXECUTABLE "nextcloud" )
+    set( APPLICATION_NAME       "Office Desktop" )
+    set( APPLICATION_SHORTNAME  "Office" )
+    set( APPLICATION_EXECUTABLE "office-desktop" )
     set( APPLICATION_ICON_NAME  "${APPLICATION_SHORTNAME}" )
 endif()
 
@@ -47,9 +47,9 @@ option( WITH_CRASHREPORTER "Build crashreporter" OFF )
 #set( CRASHREPORTER_ICON ":/owncloud-icon.png" )
 
 ## Updater options
-option( BUILD_UPDATER "Build updater" ON )
+option( BUILD_UPDATER "Build updater" OFF )
 
-option( WITH_PROVIDERS "Build with providers list" ON )
+option( WITH_PROVIDERS "Build with providers list" OFF )
 
 option( ENFORCE_VIRTUAL_FILES_SYNC_FOLDER "Enforce use of virtual files sync folder when available" OFF )
 
